@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-- boot strap style-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- menu buttons + functional components-->
+        <div class="screen off hide" id="darknessScreen"></div>
+        <div class="menuButtonArea disabled">
+            <a class="menuButton small red fs-3" id="logout-menu-button">
+                Log out
+            </a>
+            <a class="menuButton fs-3" id="myinfo-menu-button">
+                My Info
+            </a>
+            <a class="menuButton fs-3" id="loans-menu-button">
+                Loans
+            </a>
+            <a class="menuButton fs-3" id="cards-menu-button">
+                Cards
+            </a>
+            <a class="menuButton fs-3" id="accounts-menu-button">
+                Accounts
+            </a>
+        </div>
+        <div class="openMenuButton" name="openMenuButton">
+            <img class="menuIcon"></img>
+        </div>
+        <!-- END OF menu buttons + functional components-->
+        <!---->
+        <div class="center_align vertical-padding-1 horizontal-padding-2" id="main-container">
+            <div class="left_center_align max-width horizontal-padding-1">
+                <hr class="hr-thick-1" style="width: 30px; margin-right: 10px;">
+                <p class="inline no-margin fs-4">Credit</p>
+                <hr class="hr-thick-1" style="width: 100%; margin-left: 10px;">
+            </div>
+
+            <div class="account_container credit_resize" id="main_container">
+                <p class="relative-account-name">Card Name</p>
+                <div class="left_center_align">
+                    <a class="cst-btn relative-dropdown-button" name="account-dropdown-btn">
+                        <img src="./img/dropdown.png" class="dropdown-icon"></img>
+                    </a>
+                    <div class="left_baseline_align">
+                        <p class="fs-3 no-margin">$1000.00</p> <p class="no-margin fs-6 ms-2">Used</p>
+                    </div>
+                </div>
+                <div class="left_center_align">
+                    <div class="left_baseline_align">
+                        <p class="fs-5 no-margin">$2000.00</p> <p class="no-margin fs-6 ms-2">Limit</p>
+                    </div>
+                </div>
+                <div class="vertical-separator-3"></div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        Minimum payment: $240.45
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Payment Due Date: March 7th 1944
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Interest: 12.44% APR
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Card: #### #### #### XXXX
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Name: First Middle Last
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Address: Something very long and not so wrong
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Open date: Yesterday
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Expiration date: Your mom
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Active
+                    </div>
+                </div>
+                <div class="vertical-separator-2"></div>
+                <div class="right_center_align flex-wrap">
+                    <a class="btn btn-danger btn-lg  margin-left-1 vertical-top-margin-1">Close</a>
+                    <a class="btn btn-primary btn-lg margin-left-1 vertical-top-margin-1">Pause</a>
+                    <a class="btn btn-warning btn-lg margin-left-1 vertical-top-margin-1">History</a>
+                    <a class="btn btn-primary btn-lg margin-left-1 vertical-top-margin-1">Request Credit Limit</a>
+                    <a class="btn btn-warning btn-lg margin-left-1 vertical-top-margin-1">Make Payment</a>
+                </div>
+            </div>
+
+            <div class="left_center_align max-width horizontal-padding-1">
+                <hr class="hr-thick-1" style="width: 30px; margin-right: 10px;">
+                <p class="inline no-margin fs-4">Debit</p>
+                <hr class="hr-thick-1" style="width: 100%; margin-left: 10px;">
+            </div>
+
+            <div class="account_container credit_resize">
+                <div class="left_center_align">
+                    <a class="cst-btn relative-dropdown-button" name="account-dropdown-btn">
+                        <img src="./img/dropdown.png" class="dropdown-icon"></img>
+                    </a>
+                    <p class="relative-account-name">Card Name</p>
+                    <div class="left_baseline_align">
+                        <p class="fs-3 no-margin">$124,399</p>
+                    </div>
+                </div>
+                <div class="left_center_align">
+                    <div class="left_baseline_align">
+                        <p class="no-margin fs-6 ms-2">Spent this month</p>
+                    </div>
+                </div>
+                <div class="vertical-separator-3"></div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        Card: #### #### #### XXXX
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Name: First Middle Last
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Address: Something very long and not so wrong
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Open date: Yesterday
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Expiration date: Your mom
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        Active
+                    </div>
+                </div>
+                <div class="vertical-separator-2"></div>
+                <div class="right_center_align flex-wrap">
+                    <a class="btn btn-danger btn-lg  margin-left-1 vertical-top-margin-1">Close</a>
+                    <a class="btn btn-primary btn-lg margin-left-1 vertical-top-margin-1">Pause</a>
+                    <a class="btn btn-warning btn-lg margin-left-1 vertical-top-margin-1">History</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row max-width horizontal-padding-2">
+            <div class="col-md-6 col-sm-12">
+                <div class="new-button max-width vertical-top-margin-2">
+                    <a href="request_card_credit.html" class="flex max-width center_align">Request New Credit</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="max-width new-button vertical-top-margin-2">
+                    <a href="request_card_debit.html" class="flex max-width center_align">Request New Debit</a>
+                </div>
+            </div>
+        </div>
+        <!-- bootstrap js-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="scripts/request.js"></script>
+        <script src="scripts/screenPrompt.js"></script>
+        <script src="scripts/objects.js"></script>
+        <script src="scripts/cards/loadCards.js"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

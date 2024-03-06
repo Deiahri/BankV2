@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Request Credit Card</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="../main.css" rel="stylesheet">
+    </head>
+    <body>
+        <a class="back-arrow ms-3 mt-3" href="../cards.html"></a>
+        <div class="screen off hide" id="darknessScreen"></div>
+        <div class="p-3 px-5">
+            <div class="vertical-separator-1"></div>
+            <h2 class="fs-2">Request New Credit Card</h2>
+            
+            <div class="vertical-separator-1"></div>
+                
+            <div name="form-container">
+                <div class="" id="card-container"></div>
+                <p name="cardDesignWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+
+                <h2 class="fs-4">Name Your Card</h2>
+                <lable for="fname">Card Name</lable><br>
+                <input placeholder="Card Name" name="cardName" id="cardName">
+                <p name="cardNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+
+                <div class="vertical-separator-1"></div>
+                <h2 class="fs-4">Add Card Information</h2>
+
+                <lable for="fname">First Name</lable><br>
+                <input placeholder="First Name" name="fName" id="fName">
+                <p name="fNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <lable for="mname">Middle Name</lable><br>
+                <input placeholder="Middle Name" name="mName" id="mName" initialState="true">
+                <p name="mNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <lable for="lname">Last Name</lable><br>
+                <input placeholder="Last Name" name="lName" id="lName">
+                <p name="lNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <lable for="address">Address</lable><br>
+                <input placeholder="Address" name="address" id="address">
+                <div class="vertical-separator-1"></div>
+                <p name="addressWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+
+
+                <lable for="city">City</lable><br>
+                <input placeholder="City" name="city" id="city">
+                <div class="vertical-separator-1"></div>
+                <p name="cityWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+
+                <lable for="state">State</lable><br>
+                <input placeholder="State" name="state" id="state">
+                <div class="vertical-separator-1"></div>
+                <p name="stateWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+
+
+                <lable for="zipcode">Zipcode</lable><br>
+                <input placeholder="Zipcode" name="zipcode" id="zipcode">
+                <div class="vertical-separator-1"></div>
+                <p name="zipcodeWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+
+
+                <div class="vertical-separator-1"></div>
+                
+                <h2 class="fs-4">Confirm your information</h2>
+
+                <lable for="verifyPersonID">PersonID</lable><br>
+                <input placeholder="PersonID" name="verifyPersonID" type="password" id="verifyPersonID">
+                <div class="vertical-separator-1"></div>
+                <p name="verifyPersonIDWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+
+                <lable for="verifyPassword">Verify Password</lable><br>
+                <input placeholder="Password" name="verifyPassword" type="password" id='verifyPassword'>
+                <div class="vertical-separator-1"></div>
+                <p name="verifyPasswordWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+
+                <div class="vertical-separator-2"></div>
+                <button class="btn btn-theme-light disabled" name="submitBtn" href="card/addCreditCard">Submit</button>
+            <div>
+        </div>
+        <div class="vertical-separator-4"></div>
+        
+        <script src="../scripts/tools.js"></script>
+        <script src="../scripts/objects.js"></script>
+        <script src="../scripts/request.js"></script>
+        <script src="../scripts/cards/loadCreditCardOptions.js"></script>
+        <script src="../scripts/forms.js"></script>
+        <script src="../scripts/screenPrompt.js"></script>
+        <script src="../scripts/main.js"></script>
+    </body>
+</html>

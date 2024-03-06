@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="screen off hide" id="darknessScreen"></div>
+        <a class="back-arrow ms-3 mt-3" href="./login.html"></a>
+        <div class="p-3 px-5">
+            <div class="vertical-separator-1"></div>
+            <h2 class="fs-2">Become a Member Today!</h2>
+            <div class="vertical-separator-2"></div>
+                
+            <div name="form-container">
+                <h2 class="fs-6">Your Information</h2>
+                <lable for="fname">First Name</lable><br>
+                <input placeholder="First Name" name="fName" id="fName">
+                <p class="small no-margin text-color-theme-yellow hideable" name="fNameWarning"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <lable for="mname">Middle Name <i>(Optional)</i></lable><br>
+                <input placeholder="Middle Name" name="mName" id="mName" initialState="true">
+                <p class="small no-margin text-color-theme-yellow hideable" name="mNameWarning"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <lable for="lname">Last Name</lable><br>
+                <input placeholder="Last Name" name="lName" id="lName">
+                <p class="small no-margin text-color-theme-yellow hideable" name="lNameWarning"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <lable for="address">Address</lable><br>
+                <input placeholder="Address" name="address" id="address">
+                <div class="vertical-separator-1"></div>
+                <p class="small no-margin text-color-theme-yellow hideable" name="addressWarning"></p>
+
+                <lable for="city">City</lable><br>
+                <input placeholder="City" name="city" id="city">
+                <div class="vertical-separator-1"></div>
+                <p class="small no-margin text-color-theme-yellow hideable" name="cityWarning"></p>
+
+                <lable for="state">State</lable><br>
+                <input placeholder="State" name="state" id="state">
+                <div class="vertical-separator-1"></div>
+                <p class="small no-margin text-color-theme-yellow hideable" name="stateWarning"></p>
+
+                <lable for="zipcode">Zip Code</lable><br>
+                <input placeholder="Zipcode" name="zipcode" id="zipcode">
+                <div class="vertical-separator-1"></div>
+                <p class="small no-margin text-color-theme-yellow hideable" name="zipcodeWarning"></p>
+
+                <lable for="PersonID">Person ID</lable><br>
+                <input placeholder="PersonID" name="personID" type="password" id="personID">
+                <div class="vertical-separator-1"></div>
+                <p class="small no-margin text-color-theme-yellow hideable" name="personIDWarning"></p>
+                
+                <label class="fs-6 me-2" select="M">Sex: </label> <br>
+                <select name="sex" id="sex" class="input max-width px400" id="sex">
+                    <option value="Select" selected>Select</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+                <p class="small no-margin text-color-theme-yellow hideable" name="sexWarning"></p>
+
+                <div class="vertical-separator-3"></div>
+                <h2 class="fs-6">Create your login information</h2>
+
+                <lable for="Email">Email <i>(Optional)</i></lable><br>
+                <input placeholder="name@email.com" name="email" type="email" id="email" initialState="true">
+                <p class="small no-margin text-color-theme-yellow hideable" name="emailWarning"></p>
+                <div class="vertical-separator-1"></div>
+
+                <lable for="username">Username</lable><br>
+                <input placeholder="Username" name="username" id="username">
+                <div class="vertical-separator-1"></div>
+                <p class="small no-margin text-color-theme-yellow hideable" name="usernameWarning"></p>
+                
+                <lable for="password">Password</lable><br>
+                <input placeholder="Password" name="password" type="password" id="password">
+                <p class="small no-margin text-color-theme-yellow hideable" name="passwordWarning"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <lable for="Confirm">Confirm Password</lable><br>
+                <input placeholder="Confirm Pass" name="confirmPassword" type="password" requires="password">
+                <p class="small no-margin text-color-theme-yellow hideable" name="confirmPasswordWarning"></p>
+                <div class="vertical-separator-1"></div>
+                
+                <div class="vertical-separator-2"></div>
+                <button class="btn btn-theme-light " name="submitBtn" href="membership/sign-up">Submit</button>
+            </div>
+            
+        </div>
+        <script src="scripts/tools.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/screenPrompt.js"></script>
+        <script src="scripts/forms.js"></script>
+        <script src="scripts/request.js"></script>
+    </body>
+</html>

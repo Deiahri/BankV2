@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Request Loan</title>
+        <link href="../bootstrap.css" rel="stylesheet">
+        <link href="../main.css" rel="stylesheet">
+    </head>
+    <body>
+        <a class="back-arrow ms-3 mt-3" href="../loans.html"></a>
+        <div class="screen off hide" id="darknessScreen"></div>
+        <div class="p-3 px-5">
+            <div class="vertical-separator-1"></div>
+            <h2 class="fs-2">Request New Loan</h2>
+            <div class="vertical-separator-1"></div>
+            <div name="form-container" identifier="loanForm">
+                <h2 class="fs-5 fw-light">Enter loan amount and term length</h2>
+                <lable for="loanAmount">Loan Amount</lable><br>
+                $<input placeholder="550" name="loanAmount" type="number" min="0" id="loanAmount">
+                <p name="loanAmountWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+
+                <lable for="termLength">Term Length</lable><br>
+                <div class="left_center_align">
+                    <input placeholder="0" name="termLength" type="number" id="termLength" class="me-1">
+                    Months
+                </div>
+                <p name="termLengthWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                
+                <div class="vertical-separator-2"></div>
+                
+                <lable>Monthly Payment</lable><br>
+                <div class="left_center_align">
+                    <p id="monthlyPaymentAmountEstimate" class="fs-6 no-margin">$0</p>
+                    <p id="annualInterestPercent" class="ms-2 no-margin"></p>
+                </div>
+
+                <div class="vertical-separator-1"></div>
+                
+                <h2 class="fs-5">Confirm your information</h2>
+
+                <lable for="person-id">PersonID</lable><br>
+                <input placeholder="PersonID" name="verifyPersonID" type="password" id="verifyPersonID">
+                <p name="verifyPersonIDWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+
+                <lable for="password">Password</lable><br>
+                <input placeholder="Password" name="verifyPassword" type="password" id="verifyPassword">
+                <p name="verifyPasswordWarning" class="text-color-theme-yellow fs-6 hideable hideFull"></p>
+                <div class="vertical-separator-1"></div>
+                <button class="btn btn-theme-light" href="loan/addLoan" name="submitBtn">Submit</button>
+
+                <div class="vertical-separator-2"></div>
+                
+            </div>
+        </div>
+        <script src="../scripts/tools.js"></script>
+        <script src="../scripts/forms.js"></script>
+        <script src="../scripts/request.js"></script>
+        <script src="../scripts/screenPrompt.js"></script>
+        <script src="../scripts/main.js"></script>
+        
+    </body>
+</html>

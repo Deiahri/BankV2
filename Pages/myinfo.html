@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- menu buttons + functional components-->
+        <div class="screen off hide" id="darknessScreen"></div>
+        <div class="menuButtonArea disabled">
+            <a class="menuButton small logout fs-3" id="logout-menu-button">
+                Log out
+            </a>
+            <a class="menuButton fs-3" id="transfer-menu-button">
+                Transfer
+            </a>
+            <a class="menuButton fs-3" id="myinfo-menu-button">
+                My Info
+            </a>
+            <a class="menuButton fs-3" id="loans-menu-button">
+                Loans
+            </a>
+            <a class="menuButton fs-3" id="cards-menu-button">
+                Cards
+            </a>
+            <a class="menuButton fs-3" id="accounts-menu-button">
+                Accounts
+            </a>
+        </div>
+        <div class="openMenuButton" name="openMenuButton">
+            <img class="menuIcon"></img>
+        </div>
+        <!-- END OF menu buttons + functional components-->
+        <div class="center_align left-justify horizontal-padding-1 vertical-padding-1 max-width p-4" id="main-container" name="form-container" identifier="customerInfo">
+            <h1 class="fs-1">My Information</h1>
+            <div class="left_center_align">
+                <p class="fs-6">Customer ID: </p> <p class="fs-6 ms-2 min-width-1 px-2" id="customerID" name="customerID">customerID</p>
+            </div>
+            <div class="left_center_align">
+                <p class="fs-6">Username: </p> <p class="fs-6 ms-2 min-width-1 px-2 light_grey_background background-color-theme-second-darkest-hoverable background-color-theme-second-darkest-hoverable" id="username" name="username" contenteditable>username</p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="usernameWarning"></p>
+
+            <div class="left_center_align">
+                <p class="fs-6">Password: </p> <p class="fs-6 ms-2 min-width-1 px-2 light_grey_background background-color-theme-second-darkest-hoverable" id="newPassword" name="newPassword" requires="confirmPasswordContainer" initialstate="true"  contenteditable></p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="newPasswordWarning"></p>
+            
+            <div class="left_center_align hideable hideFull" name="confirmPasswordContainer">
+                <p class="fs-6">Confirm Pass: </p> <p class="fs-6 ms-2 min-width-1 px-2 light_grey_background background-color-theme-second-darkest-hoverable" id="confirmNewPassword" name="confirmNewPassword" initialstate="true" contenteditable></p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="confirmNewPasswordWarning"></p>
+            
+            <div class="left_center_align">
+                <p class="fs-6">Email: </p> <p class="fs-6 ms-2 min-width-1 px-2 light_grey_background background-color-theme-second-darkest-hoverable" id="email" name="email" initialstate="true" contenteditable>email</p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" id="emailWarning" name="email warning"></p>
+
+            <div class="left_center_align flex-wrap">
+                <p class="fs-6">Name: </p> 
+                <p class="fs-6 ms-2 min-width-1 px-1 light_grey_background background-color-theme-second-darkest-hoverable" name="fName" contenteditable>fName</p>
+                <p class="fs-6 ms-2 min-width-1 px-1 light_grey_background background-color-theme-second-darkest-hoverable" name="mName" initialstate="true" contenteditable>mName</p>
+                <p class="fs-6 ms-2 min-width-1 px-1 light_grey_background background-color-theme-second-darkest-hoverable" name="lName" contenteditable>lName</p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="fNameWarning"></p>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="mNameWarning"></p>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="lNameWarning"></p>
+
+            <div class="left_center_align">
+                <p class="fs-6">PersonID: </p> <p class="fs-6 ms-2 min-width-1 px-1">###-###-###</p>
+            </div>
+            
+            <div class="left_center_align">
+                <p class="fs-6">Address: </p> <p class="fs-6 ms-2 min-width-1 px-1 light_grey_background background-color-theme-second-darkest-hoverable" name='address' id="address" contenteditable>Address</p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="addressWarning"></p>
+
+            <div class="left_center_align">
+                <p class="fs-6">State: </p> <p class="fs-6 ms-2 min-width-1 px-2 light_grey_background background-color-theme-second-darkest-hoverable" id="state" name="state" contenteditable>state</p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="stateWarning"></p>
+
+            <div class="left_center_align">
+                <p class="fs-6">City: </p> <p class="fs-6 ms-2 min-width-1 px-1 light_grey_background background-color-theme-second-darkest-hoverable" name='city' id="city" contenteditable>city</p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="cityWarning"></p>
+
+            <div class="left_center_align">
+                <p class="fs-6">Zip Code: </p> <p class="fs-6 ms-2 min-width-1 px-1 light_grey_background background-color-theme-second-darkest-hoverable" id="zipcode" name="zipcode" contenteditable>zipcode</p>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="zipcodeWarning"></p>
+
+            <div class="left_center_align mb-2">
+                <label class="fs-6 me-2" select="M">Sex: </label> 
+                <select name="sex" id="sex" class="input" name="sex">
+                    <option value="Select" selected>Select</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <p class="fs-6 text-color-theme-yellow hideable hideFull" name="sexWarning"></p>
+
+            <div class="left_center_align">
+                <p class="fs-6">Join Date: </p> <p class="fs-6 ms-2 px-1" id="joinDate" initialstate="true" name="joinDate">January 1 1977</p>
+            </div>
+
+            <div class="left_center_align" id="terminatedDate">
+                <p class="fs-6" id=""></p> <p class="fs-6 ms-2 px-1"></p>
+            </div>
+
+            <div class="left_center_align" id="terminationReason">
+                <p class="fs-6"></p> <p class="fs-6 ms-2 px-1"></p>
+            </div>
+            <div class="left_center_align">
+                <button class="btn btn-dark mt-2 hideable hideFull disabled" name="submitBtn" href="membership/setInfo">Submit</button>
+                <button class="btn btn-danger mt-2 ms-3 hideable hideFull" name="undoBtn">Undo Changes</button>
+            </div>
+        </div>
+        <!-- bootstrap js-->
+        <script src="scripts/tools.js"></script>
+        <script src="scripts/forms.js"></script>
+        <script src="scripts/request.js"></script>
+        <script src="scripts/myinfo/loadMyInfo.js"></script>
+        <script src="scripts/screenPrompt.js"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transfer</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- menu buttons + functional components-->
+        <div class="screen off hide" id="darknessScreen"></div>
+        <div class="menuButtonArea disabled">
+            <a class="menuButton small logout fs-3" id="logout-menu-button">
+                Log out
+            </a>
+            <a class="menuButton fs-3" id="transfer-menu-button">
+                Transfer
+            </a>
+            <a class="menuButton fs-3" id="myinfo-menu-button">
+                My Info
+            </a>
+            <a class="menuButton fs-3" id="loans-menu-button">
+                Loans
+            </a>
+            <a class="menuButton fs-3" id="cards-menu-button">
+                Cards
+            </a>
+            <a class="menuButton fs-3" id="accounts-menu-button">
+                Accounts
+            </a>
+        </div>
+        <div class="openMenuButton" name="openMenuButton">
+            <img class="menuIcon"></img>
+        </div>
+        <!-- END OF menu buttons + functional components-->
+        <!---->
+        <div class="horizontal-padding-2 vertical-padding-1" id="main-container">
+            <h1 class="fs-1">Transfer</h1>
+            <ul class="nav nav-pills" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="send-account-tab" data-bs-toggle="tab" data-bs-target="#send-account" type="button" role="tab" aria-controls="send-account" aria-selected="true">Send to Account</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="account" aria-selected="false">Send To User</button>
+                </li>
+                <!-- <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="account" aria-selected="false">Request from User</button>
+                </li> -->
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="send-account" role="tabpanel" aria-labelledby="send-account-tab">
+                    <div name="form-container" identifier='send-account'>
+                        <!-- hidden fields-->
+                        <p name="transactionReason" initialState="true" class="hideable hideFull">Direct Account Transfer</p>
+                        <p name="paymentType" initialState="true" class="hideable hideFull">account</p>
+                        <p name="destinationType" initialState="true" class="hideable hideFull">account</p>
+                        <!-- end of hidden fields-->
+                        <p class="fs-2 fw-bold no-margin">From</p>
+                        <div class="left_center_align">
+                            <p class="fs-5 no-margin" id="account_name_1">No Account Selected</p>
+                            <div class="horizontal-separator-1"></div>
+                            <p class="fs-5 no-margin" id="account_balance_1">$0.00</p>
+                        </div>
+
+                        <label>Saved Account</label><br>
+                        <select class="input max-width px400" name="accountOptions">
+                            <option value="custom">None</option>
+                        </select><br>
+
+                        <lable for="accountNumber">Payment amount (USD)</lable><br>
+                        <input placeholder="$123.45" name="paymentAmount" id="paymentAmount" type="number">
+                        <p name="paymentAmountWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+
+                        <lable for="bankRoutingNumber">Bank Routing Number</lable><br>
+                        <input placeholder="Bank Routing Number" name="bankRoutingNumber" id="bankRoutingNumber">
+                        <p name="bankRoutingNumberWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="accountNumber">Account Number</lable><br>
+                        <input placeholder="Account Number" name="accountNumber" id="accountNumber">
+                        <p id="accountNumberWarning" name="accountNumberWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+    
+                        <lable for="fname">First Name</lable><br>
+                        <input placeholder="First Name" name="fName" id="accountfName">
+                        <p name="fNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="mname">Middle Name</lable><br>
+                        <input placeholder="Middle Name" name="mName" id="accountmName" initialState="true">
+                        <p name="mNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="lname">Last Name</lable><br>
+                        <input placeholder="Last Name" name="lName" id="accountlName">
+                        <p name="lNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="address">Address</lable><br>
+                        <input placeholder="Address" name="address" id="accountaddress">
+                        <div class="vertical-separator-1"></div>
+                        <p name="addressWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+    
+                        <lable for="accountstate">State</lable><br>
+                        <input placeholder="Address" name="state" id="accountstate">
+                        <div class="vertical-separator-1"></div>
+                        <p name="stateWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+    
+                        <lable for="accountcity">City</lable><br>
+                        <input placeholder="Address" name="city" id="accountcity">
+                        <div class="vertical-separator-1"></div>
+                        <p name="cityWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+    
+                        <lable for="accountzip">Zip Code</lable><br>
+                        <input placeholder="Address" name="zipcode" id="accountzipcode">
+                        <div class="vertical-separator-1"></div>
+                        <p name="zipcodeWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+
+                        <lable for="verifyPersonID">Verify Account's Person ID</lable><br>
+                        <input placeholder="Person ID" name="verifyPersonID" id="verifyPersonID" type="password">
+                        <div class="vertical-separator-1"></div>
+                        <p name="verifyPersonIDWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        
+                        <!-- destination area -->
+                        <p class="fs-2 fw-bold no-margin">To</p>
+
+                        <!-- Perhaps add recent transfer destinations -->
+                        <!-- <label>Saved Card</label><br>
+                        <select class="input max-width px400" id="cardOptions">
+                            <option value="custom">None</option>
+                        </select><br> -->                        
+                        <lable for="accountNumber">Account Number</lable><br>
+                        <input placeholder="Account Number" name="destinationID">
+                        <p name="destinationIDWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+    
+                        <lable for="destinationFName">First Name</lable><br>
+                        <input placeholder="First Name" name="destinationFName">
+                        <p name="destinationFNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="destinationMName">Middle Name</lable><br>
+                        <input placeholder="Middle Name" name="destinationMName" initialState="true">
+                        <p name="destinationMNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="destinationLName">Last Name</lable><br>
+                        <input placeholder="Last Name" name="destinationLName">
+                        <p name="destinationLNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        <br>
+                        
+                        <button class="btn btn-theme-light disabled" name="submitBtn" href="transfer/submit">Submit</button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
+                    <div name="form-container" identifier='send-user'>
+                        <!-- hidden fields-->
+                        <!-- hidden fields-->
+                        <p name="transactionReason" initialState="true" class="hideable hideFull">Direct Account Transfer</p>
+                        <p name="paymentType" initialState="true" class="hideable hideFull">account</p>
+                        <p name="destinationType" initialState="true" class="hideable hideFull">user</p>
+                        <!-- end of hidden fields-->
+                        <p class="fs-2 fw-bold no-margin">From</p>
+                        <div class="left_center_align">
+                            <p class="fs-5 no-margin" id="account_name_2">No Account Selected</p>
+                            <div class="horizontal-separator-1"></div>
+                            <p class="fs-5 no-margin" id="account_balance_2">$0.00</p>
+                        </div>
+
+                        <label>Saved Account</label><br>
+                        <select class="input max-width px400" name="accountOptions">
+                            <option value="custom">None</option>
+                        </select><br>
+
+                        <lable for="accountNumber">Payment amount (USD)</lable><br>
+                        <input placeholder="$123.45" name="paymentAmount" type="number">
+                        <p name="paymentAmountWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+
+                        <lable for="bankRoutingNumber">Bank Routing Number</lable><br>
+                        <input placeholder="Bank Routing Number" name="bankRoutingNumber" id="bankRoutingNumber2">
+                        <p name="bankRoutingNumberWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="accountNumber">Account Number</lable><br>
+                        <input placeholder="Account Number" name="accountNumber" id="accountNumber2">
+                        <p id="accountNumberWarning" name="accountNumberWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+    
+                        <lable for="fname">First Name</lable><br>
+                        <input placeholder="First Name" name="fName" id="accountfName2">
+                        <p name="fNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="mname">Middle Name</lable><br>
+                        <input placeholder="Middle Name" name="mName" id="accountmName2" initialState="true">
+                        <p name="mNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="lname">Last Name</lable><br>
+                        <input placeholder="Last Name" name="lName" id="accountlName2">
+                        <p name="lNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="address">Address</lable><br>
+                        <input placeholder="Address" name="address" id="accountaddress2">
+                        <div class="vertical-separator-1"></div>
+                        <p name="addressWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+    
+                        <lable for="accountstate">State</lable><br>
+                        <input placeholder="Address" name="state" id="accountstate2">
+                        <div class="vertical-separator-1"></div>
+                        <p name="stateWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+    
+                        <lable for="accountcity">City</lable><br>
+                        <input placeholder="Address" name="city" id="accountcity2">
+                        <div class="vertical-separator-1"></div>
+                        <p name="cityWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+    
+                        <lable for="accountzip">Zip Code</lable><br>
+                        <input placeholder="Address" name="zipcode" id="accountzipcode2">
+                        <div class="vertical-separator-1"></div>
+                        <p name="zipcodeWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+
+                        <lable for="verifyPersonID">Verify Account's Person ID</lable><br>
+                        <input placeholder="Person ID" name="verifyPersonID" id="verifyPersonID" type="password">
+                        <div class="vertical-separator-1"></div>
+                        <p name="verifyPersonIDWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        
+                        <!-- destination area -->
+                        <p class="fs-2 fw-bold no-margin">To</p>
+
+                        <!-- Perhaps add recent transfer destinations -->
+                        <!-- <label>Saved Card</label><br>
+                        <select class="input max-width px400" id="cardOptions">
+                            <option value="custom">None</option>
+                        </select><br> -->                        
+                        <lable for="accountNumber">Username</lable><br>
+                        <input placeholder="Username" name="destinationID">
+                        <p name="destinationIDWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+    
+                        <lable for="destinationFName">First Name</lable><br>
+                        <input placeholder="First Name" name="destinationFName">
+                        <p name="destinationFNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="destinationMName">Middle Name</lable><br>
+                        <input placeholder="Middle Name" name="destinationMName" initialState="true">
+                        <p name="destinationMNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        
+                        <lable for="destinationLName">Last Name</lable><br>
+                        <input placeholder="Last Name" name="destinationLName">
+                        <p name="destinationLNameWarning" class="text-color-theme-yellow fs-6 hideable hideFull no-margin"></p>
+                        <div class="vertical-separator-1"></div>
+                        <br>
+
+                        <button class="btn btn-theme-light disabled" name="submitBtn" href="transfer/submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bootstrap js-->
+        <script src="boostrap.js"></script>
+        <script src="scripts/tools.js"></script>
+        
+        <script src="scripts/request.js"></script>
+        <script src="scripts/screenPrompt.js"></script>
+
+        <script src="scripts/objects.js"></script>
+
+        <script src="scripts/main.js"></script>
+        <script src="scripts/transfer.js"></script>
+        <script src="scripts/forms.js"></script>
+    </body>
+</html>

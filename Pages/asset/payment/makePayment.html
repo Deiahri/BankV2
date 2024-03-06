@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../bootstrap.css" rel="stylesheet">
+    <link href="../../main.css" rel="stylesheet">
+    <title>Make Payment</title>
+</head>
+<body>
+    <div class="screen off hide" id="darknessScreen"></div>
+    <a class="back-arrow ms-3 mt-3" href="../../cards.html" id="previousPageButton"></a>
+    <div class="horizontal-padding-2 vertical-padding-1">
+        <h1 class="fs-1">Make A Payment</h1>
+        <div>
+            <p class="fs-3 no-margin" id="assetTitle">Asset Information</p>
+            <p id="assetName" class="no-margin">AssetName</p>
+            <p id="assetNumber" class="no-margin">AssetNumber</p>
+            <p id="assetAmountDue" class="no-margin fs-4 fw-medium">AssetAmountDue</p>
+        </div>
+        <!-- Tabs navs -->
+        <ul class="nav nav-pills" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="credit-debit-tab" data-bs-toggle="tab" data-bs-target="#credit-debit" type="button" role="tab" aria-controls="credit-debit" aria-selected="true">Credit/Debit</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="account" aria-selected="false">Bank Account</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="credit-debit" role="tabpanel" aria-labelledby="credit-debit-tab">
+                <div name="form-container" identifier='credit-debit'>
+                    <!-- hidden fields-->
+                    <p name="transactionReason" initialState="true" class="hideable hideFull">Credit Card Payment</p>
+                    <p name="paymentType" initialState="true" class="hideable hideFull">card</p>
+                    
+                    <p name="destinationID" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationFName" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationMName" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationLName" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationType" initialState="true" class="hideable hideFull">card</p>
+                    <!-- end of hidden fields-->
+                    <lable for="accountNumber">Payment Amount (USD)</lable><br>
+                    <input placeholder="$123.45" name="paymentAmount" id="paymentAmount" type="number">
+                    <p name="paymentAmountWarning" class="red-text fs-6 hideable hideFull no-margin"></p>
+                    <div class="vertical-separator-1"></div>
+
+                    <label>Saved Card</label><br>
+                    <select class="input max-width px400" id="cardOptions">
+                        <option value="custom">None</option>
+                    </select><br>
+                    <lable for="cardNumber">Card Number</lable><br>
+                    <input placeholder="Card Number" name="cardNumber" id="cardNumber">
+                    <p name="cardNumberWarning" class="red-text fs-6 hideable hideFull"></p><br>
+                    
+                    <lable for="cardCVC">CVC</lable><br>
+                    <input placeholder="CVC" name="cardCVC" id="cardCVC">
+                    <p name="cardCVCWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="fname">First Name</lable><br>
+                    <input placeholder="First Name" name="fName" id="fName">
+                    <p name="fNameWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="mname">Middle Name</lable><br>
+                    <input placeholder="Middle Name" name="mName" id="mName" initialState="true">
+                    <p name="mNameWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="lname">Last Name</lable><br>
+                    <input placeholder="Last Name" name="lName" id="lName">
+                    <p name="lNameWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="address">Address</lable><br>
+                    <input placeholder="Address" name="address" id="address">
+                    <div class="vertical-separator-1"></div>
+                    <p name="addressWarning" class="red-text fs-6 hideable hideFull"></p>
+
+                    <lable for="city">City</lable><br>
+                    <input placeholder="City" name="city" id="city">
+                    <div class="vertical-separator-1"></div>
+                    <p name="cityWarning" class="red-text fs-6 hideable hideFull"></p>
+
+                    <lable for="state">State</lable><br>
+                    <input placeholder="State" name="state" id="state">
+                    <p name="stateWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="zipcode">Zipcode</lable><br>
+                    <input placeholder="Zipcode" name="zipcode" id="zipcode">
+                    <p name="zipcodeWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                
+                    <button class="btn btn-dark disabled" name="submitBtn" href="payment/submit">Submit</button>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
+                <div name="form-container" identifier='account'>
+                    <!-- hidden fields-->
+                    <p name="transactionReason" initialState="true" class="hideable hideFull">Credit Card Payment</p>
+                    <p name="paymentType" initialState="true" class="hideable hideFull">account</p>
+
+                    <p name="destinationID" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationFName" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationMName" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationLName" initialState="true" class="hideable hideFull">account</p>
+                    <p name="destinationType" initialState="true" class="hideable hideFull">card</p>
+                    
+                    <!-- end of hidden fields-->
+                    <lable for="accountNumber">Payment amount (USD)</lable><br>
+                    <input placeholder="$123.45" name="paymentAmount" id="paymentAmount" type="number">
+                    <p name="paymentAmountWarning" class="red-text fs-6 hideable hideFull no-margin"></p>
+                    <div class="vertical-separator-1"></div>
+
+                    <label>Saved Account</label><br>
+                        <select class="input max-width px400" id="accountOptions">
+                            <option value="custom">None</option>
+                        </select><br>
+                    <lable for="bankRoutingNumber">Bank Routing Number</lable><br>
+                    <input placeholder="Bank Routing Number" name="bankRoutingNumber" id="bankRoutingNumber">
+                    <p name="bankRoutingNumberWarning" class="red-text fs-6 hideable hideFull no-margin"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="accountNumber">Account Number</lable><br>
+                    <input placeholder="Account Number" name="accountNumber" id="accountNumber">
+                    <p id="accountNumberWarning" name="accountNumberWarning" class="red-text fs-6 hideable hideFull no-margin"></p>
+                    <div class="vertical-separator-1"></div>
+
+                    <lable for="fname">First Name</lable><br>
+                    <input placeholder="First Name" name="fName" id="accountfName">
+                    <p name="fNameWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="mname">Middle Name</lable><br>
+                    <input placeholder="Middle Name" name="mName" id="accountmName" initialState="true">
+                    <p name="mNameWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="lname">Last Name</lable><br>
+                    <input placeholder="Last Name" name="lName" id="accountlName">
+                    <p name="lNameWarning" class="red-text fs-6 hideable hideFull"></p>
+                    <div class="vertical-separator-1"></div>
+                    
+                    <lable for="address">Address</lable><br>
+                    <input placeholder="Address" name="address" id="accountaddress">
+                    <div class="vertical-separator-1"></div>
+                    <p name="addressWarning" class="red-text fs-6 hideable hideFull"></p>
+
+                    <lable for="accountstate">State</lable><br>
+                    <input placeholder="Address" name="state" id="accountstate">
+                    <div class="vertical-separator-1"></div>
+                    <p name="stateWarning" class="red-text fs-6 hideable hideFull"></p>
+
+                    <lable for="accountcity">City</lable><br>
+                    <input placeholder="Address" name="city" id="accountcity">
+                    <div class="vertical-separator-1"></div>
+                    <p name="cityWarning" class="red-text fs-6 hideable hideFull"></p>
+
+                    <lable for="accountzip">Zip Code</lable><br>
+                    <input placeholder="Address" name="zipcode" id="accountzipcode">
+                    <div class="vertical-separator-1"></div>
+                    <p name="zipcodeWarning" class="red-text fs-6 hideable hideFull"></p>
+
+                    <lable for="verifyPersonID">Verify Account's Person ID</lable><br>
+                    <input placeholder="Person ID" name="verifyPersonID" id="verifyPersonID" type="password">
+                    <div class="vertical-separator-1"></div>
+                    <p name="verifyPersonIDWarning" class="red-text fs-6 hideable hideFull"></p>
+                    
+                    <button class="btn btn-dark disabled" name="submitBtn" href="payment/submit">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="vertical-separator-2"></div>
+        <div class="vertical-separator-3"></div>
+    </div>
+
+    <script src="../../boostrap.js"></script>
+    <script src="../../scripts/tools.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/request.js"></script>
+    <!--<script src="../../scripts/forms.js"></script>-->
+    <script src="../../scripts/forms.js"></script>
+    <script src="../../scripts/screenPrompt.js"></script>
+    <script src="../../scripts/_makePayment/makePayment.js"></script>
+</body>
+</html>
