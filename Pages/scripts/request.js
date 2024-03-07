@@ -41,7 +41,7 @@ async function postRequest(urlEnd = "", data = {}, requestHeaders = null) {
       let jsonData = await response.json(); // parses JSON response into native JavaScript objects
       processCookies(jsonData.cookie);
       if(jsonData.message === 'unauthorized') {
-        document.location.href = `${document.location.origin}/BankV2/unauthorized.html`;
+        document.location.href = `${document.location.origin}/BankV2/Pages/unauthorized.html`;
       }
       return jsonData;
   }

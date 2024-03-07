@@ -8,7 +8,7 @@ getElementById('loginBtn').onclick = () => {
     postRequest('membership/login', loginData).then((data) => {
         debugLog(data);
         if(data.redirect) {
-            window.location.href = `${window.location.origin}/${data.redirect}`;
+            window.location.href = `../${data.redirect}`;
         }
         else {
             promptAlertV2(data);
