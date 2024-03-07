@@ -1,4 +1,6 @@
-const APIEndpointBase = "https://bankv2.deiahribank.xyz/";
+const APIEndpointBase = "https://bankv2.deiahribank.xyz";
+// const APIEndpointBase = "http://localhost:8080";
+
 async function postRequest(urlEnd = "", data = {}, requestHeaders = null) {
   if(!requestHeaders) {
     requestHeaders = {
